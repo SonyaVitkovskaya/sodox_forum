@@ -1,0 +1,369 @@
+html {
+    font-size: 18px;
+}
+body {
+    margin: 0;
+    font: 0.8rem / 1.5 'Circe', Arial, sans-serif;
+    color: var(--black);
+    background-color: white;
+}
+
+header {
+    background-color: white;
+    color: black;
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid #ccc; 
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.flx {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 1340px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    border-top: 0 solid transparent;
+
+}
+
+.header_contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 320px);
+}
+
+.search-form {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    
+}
+
+.search-button {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: #B50000;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-button:hover {
+    background-color: #727271;
+}
+
+
+.header_logo {
+    display: block;
+    width: 248px;
+    height:80px;
+    background: url(bg-logo-sodox.png) center no-repeat;
+    background-size: contain;
+
+}
+
+.login-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%;
+    margin-right: 20px;
+    
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 5px; 
+}
+
+.login-link {
+    text-decoration: none;
+    color: black;
+    font-weight: none;
+    font-size: 15px;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;  /*Скрываем модальное окно по умолчанию */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Полупрозрачный черный фон */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #727271;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #727271;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* .modal-content form {
+    display: flex;
+    flex-direction: column;
+} */
+
+#loginFields, #registerFields{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+}
+
+.modal-content input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Стили для кнопок внутри модального окна */
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    gap: 20px;
+}
+
+.button-group button {
+    flex: 1; /* Растягиваем кнопки на всю ширину контейнера */
+    max-width: 48%; /* Ограничиваем максимальную ширину кнопок */
+    padding: 10px;
+    text-align: center;
+}
+
+
+.login-button {
+    padding: 10px;
+    background-color: #B50000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.login-button:hover {
+    background-color: #727271;
+}
+
+.register-button {
+    padding: 10px;
+    background-color: transparent;
+    color: #727271;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.register-button:hover {
+    color: black;
+    background-color: rgba(181, 0, 0, 0.2); /* Полупрозрачный красный фон */
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+.header-contact_item {
+    padding-left: 32px;
+}
+
+.header-contact_item {
+    padding-left: 56px;
+    position: relative;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.header-contact_item a {
+    display: block;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.header-contact_item::before {
+    content: '';
+    position: absolute;
+    top: calc(50% - 21px);
+    left: 0;
+    width: 42px;
+    height: 42px;
+    background:#B50000;
+    -webkit-mask: url(bg-logo-sodox.png) center no-repeat;
+    mask: url(bg-logo-sodox.png) center no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.header-contact_item span {
+    display: block;
+}
+
+
+
+.header-contact_item--mail::before {
+    mask-image: url(bg-logo-sodox.png);
+}
+
+.header-contact_item--phone::before {
+    -webkit-mask-image: url(bg-logo-sodox.png);
+    mask-image: url(bg-logo-sodox.png);
+} */
+
+
+
+
+
+
+
+h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.forum-container {
+    display: flex;
+    min-width: 320px;
+    max-width: 1340px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 100%;
+    gap: 20px;
+}
+
+.discussion-list {
+    width: 25%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.discussion-list h2 {
+    margin-top: 0;
+}
+
+.discussion-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.discussion-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.discussion-list li:hover {
+    background-color: #ddd;
+}
+
+.discussion-main {
+    width: 75%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.discussion-main h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: white;
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
