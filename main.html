@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sodox</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -16,7 +17,7 @@
                     <button type="submit" class="search-button">Найти</button>
                 </form>
                 <div class="login-contact">
-                    <img src="user-icon.png" alt="Иконка пользователя" class="user-icon">
+                    <img src="/images/user-icon.png" alt="Иконка пользователя" class="user-icon">
                     <a href="#" class="login-link" id="loginLink">Войти</a>
                 </div>
 
@@ -50,23 +51,42 @@
         <div class="forum-container">
             <aside class="discussion-list">
                 <h2>Обсуждения</h2>
-                <ul>
-                    <li>Обсуждение 1</li>
-                    <li>Обсуждение 2</li>
-                    <li>Обсуждение 3</li>
-                    <li>Обсуждение 4</li>
+                <ul id="discussion-list">
+                    <li data-type="type1">Тип станка 1</li>
+                    <li data-type="type2">Тип станка 2</li>
+                    <li data-type="type3">Тип станка 3</li>
+                    <li data-type="type4">Тип станка 4</li>
                 </ul>
             </aside>
+    
             <section class="discussion-main">
-                <h2>Главное окно обсуждений</h2>
-                <p>Здесь отображаются сообщения выбранного обсуждения.</p>
+                <h2 id="discussion-title">Главное окно обсуждений</h2>
+                <div id="messages-list" style="display: none;">
+                    <!-- <h3>Сообщения</h3> -->
+                    <ul id="messages"></ul>
+                </div>
+                <div id="message-detail" style="display: none;">
+                    <h3 id="message-title"></h3>
+                    <p id="message-text"></p>
+                    <div class="comment-field">
+                        <h3>Добавить комментарий</h3>
+                        <textarea id="new-comment" placeholder="Введите ваш комментарий..."></textarea>
+                        <button type="button" id="add-comment">Добавить комментарий</button>
+                    </div>
+                    <div class="comments-section" id="comments-section">
+                        <h3>Комментарии</h3>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
+    
+    
+    
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Название компании. Все права защищены.</p>
+            <p>&copy; 2024 SODOX. Все права защищены.</p>
         </div>
     </footer>
 
