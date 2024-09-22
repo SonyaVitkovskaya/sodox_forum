@@ -6,6 +6,11 @@ const modalTitle = document.getElementById("modalTitle");
 const loginFields = document.getElementById("loginFields");
 const registerFields = document.getElementById("registerFields");
 
+const addmodal = document.getElementById("new-topic-modal");
+const addTopicBtn = document.getElementById("add-topic-btn");
+const closeBtn = document.getElementsByClassName("close")[0];
+const submitTopicBtn = document.getElementById("submit-topic-btn");
+
 // // Открытие модального окна с формой входа
 // function openLoginModal() {
 //     modal.style.display = "block";
@@ -120,6 +125,49 @@ window.onclick = function(event) {
 
 
 
+// Открыть модальное окно при нажатии на кнопку
+addTopicBtn.addEventListener("click", function() {
+    addmodal.style.display = "block";
+});
+
+// Закрыть модальное окно при нажатии на крестик
+closeBtn.addEventListener("click", function() {
+    addmodal.style.display = "none";
+});
+
+// Закрыть модальное окно при клике вне окна
+window.addEventListener("click", function(event) {
+    if (event.target === modal) {
+        addmodal.style.display = "none";
+    }
+});
+
+// Обработка отправки новой темы (пока без отправки на сервер)
+submitTopicBtn.addEventListener("click", function() {
+    const topicText = document.getElementById("topic-text").value.trim();
+    const topicTitle = document.getElementById("topic-title").value.trim();
+
+    if (topicText !== "" && topicTitle !== "") {
+        // Пример обработки данных новой темы
+        console.log("Тема добавлена:", topicTitle, topicText);
+
+        // Можно добавить тему в список сообщений
+        const newTopic = document.createElement("li");
+        newTopic.innerHTML = `<strong>${topicTitle}</strong>: ${topicText}`;
+        document.getElementById("messages").appendChild(newTopic);
+
+        // Очистить поля
+        document.getElementById("topic-text").value = "";
+        document.getElementById("topic-title").value = "";
+
+        // Закрыть окно после отправки
+        addmodal.style.display = "none";
+    } else {
+        alert("Пожалуйста, заполните оба поля");
+    }
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const discussionListItems = document.querySelectorAll("#discussion-list li");
     const discussionTitle = document.getElementById("discussion-title");
@@ -131,6 +179,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const commentsSection = document.getElementById("comments-section");
     const commentField = document.getElementById("new-comment");
     const addCommentButton = document.getElementById("add-comment");
+
+    
 
     // Пример структуры данных для сообщений
     const messagesData = {

@@ -6,6 +6,7 @@
     <title>Sodox</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -64,6 +65,8 @@
                 <div id="messages-list" style="display: none;">
                     <!-- <h3>Сообщения</h3> -->
                     <ul id="messages"></ul>
+                    <!-- Добавляем кнопку для создания новой темы -->  
+                    <button id="add-topic-btn" class="add-topic-btn"><i class="fas fa-pen"></i>Добавить новую тему</button>
                 </div>
                 <div id="message-detail" style="display: none;">
                     <h3 id="message-title"></h3>
@@ -90,7 +93,16 @@
         </div>
     </footer>
 
-
+    <!-- Всплывающее окно для создания новой темы -->
+    <div id="new-topic-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Новая тема</h2>
+            <textarea id="topic-text" placeholder="Текст темы: ваша история или вопрос и # хештег"></textarea>
+            <input type="text" id="topic-title" placeholder="Название темы">
+            <button id="submit-topic-btn" class="submit-btn">Добавить тему</button>
+        </div>
+    </div>
 
 
     <!-- Модальное окно -->

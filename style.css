@@ -491,7 +491,59 @@ h1 {
 }
 
 .comment-actions span:hover {
-    color:  #B50000;
+    color:  #900000;
+}
+
+
+
+
+/* Стиль для кнопки "Добавить новую тему" */
+#add-topic-btn {
+    background-color: transparent; /* Убираем фон по умолчанию */
+    color: #B50000; /* Ярко-красный текст и иконка */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* При наведении */
+#add-topic-btn:hover {
+    background-color: #FADADD; /* Светло-красный фон при наведении */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Усиленная тень */
+}
+
+/* Иконка внутри кнопки */
+#add-topic-btn i {
+    font-size: 18px;
+}
+
+#topic-text, #topic-title {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #B50000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #727271;
 }
 
 
